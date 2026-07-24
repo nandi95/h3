@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 - **resolveDotSegments:** Add `mergeSlashes` option ([9581407](https://github.com/h3js/h3/commit/9581407))
 - **session:** Default session cookie to SameSite=Lax ([acf8d77](https://github.com/h3js/h3/commit/acf8d77))
-- ⚠️  Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
+- ⚠️ Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
 - **readValidatedBody:** Support readBody options ([#1476](https://github.com/h3js/h3/pull/1476))
 - Add `onDispose` hook ([#1488](https://github.com/h3js/h3/pull/1488))
 - **defineValidatedHandler:** Support async validation ([#1491](https://github.com/h3js/h3/pull/1491))
@@ -50,8 +50,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 💅 Refactors
 
-- **request:** ⚠️  Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
-- **event-stream:** ⚠️  Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
+- **request:** ⚠️ Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
+- **event-stream:** ⚠️ Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
 - **sse:** Promote EventStream to public API, deprecate createEventStream ([#1509](https://github.com/h3js/h3/pull/1509))
 
 ### 📖 Documentation
@@ -80,9 +80,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 #### ⚠️ Breaking Changes
 
-- ⚠️  Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
-- **request:** ⚠️  Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
-- **event-stream:** ⚠️  Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
+- ⚠️ Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
+- **request:** ⚠️ Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
+- **event-stream:** ⚠️ Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
 
 ### ❤️ Contributors
 
