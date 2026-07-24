@@ -2,6 +2,97 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## v2.0.1-rc.26
+
+[compare changes](https://github.com/h3js/h3/compare/v2.0.1-rc.25...v2.0.1-rc.26)
+
+### 🚀 Enhancements
+
+- **resolveDotSegments:** Add `mergeSlashes` option ([9581407](https://github.com/h3js/h3/commit/9581407))
+- **session:** Default session cookie to SameSite=Lax ([acf8d77](https://github.com/h3js/h3/commit/acf8d77))
+- ⚠️  Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
+- **readValidatedBody:** Support readBody options ([#1476](https://github.com/h3js/h3/pull/1476))
+- Add `onDispose` hook ([#1488](https://github.com/h3js/h3/pull/1488))
+- **defineValidatedHandler:** Support async validation ([#1491](https://github.com/h3js/h3/pull/1491))
+- **sse:** Allow returning EventStream directly from handlers ([#1508](https://github.com/h3js/h3/pull/1508))
+
+### 🔥 Performance
+
+- Single-scan fast-path guard for `resolveDotSegments` ([#1458](https://github.com/h3js/h3/pull/1458))
+- **cookie:** Avoid quadratic chunked cookie parsing and header rebuilds ([#1472](https://github.com/h3js/h3/pull/1472))
+- **middleware:** Precompose middleware chains ([#1475](https://github.com/h3js/h3/pull/1475))
+- **body-limit:** Stream enforcement instead of pre-buffering ([#1500](https://github.com/h3js/h3/pull/1500))
+
+### 🩹 Fixes
+
+- **resolveDotSegments:** Preserve trailing slash on trailing dot segments ([ca7de07](https://github.com/h3js/h3/commit/ca7de07))
+- **cookie:** Dedup cookies with leading-dot / mixed-case domains ([#1462](https://github.com/h3js/h3/pull/1462))
+- **cors:** Warn on credentials with `null` origin ([#1464](https://github.com/h3js/h3/pull/1464))
+- Decode Basic-auth credentials as UTF-8 ([#1463](https://github.com/h3js/h3/pull/1463))
+- **proxy:** ForwardHeaders must not override framing headers ([#1467](https://github.com/h3js/h3/pull/1467))
+- **cookie:** Cap chunk count in setChunkedCookie ([#1469](https://github.com/h3js/h3/pull/1469))
+- **cors:** Set single-valued CORS headers instead of appending ([#1466](https://github.com/h3js/h3/pull/1466))
+- **auth:** Harden basic-auth realm handling and credential timing ([#1468](https://github.com/h3js/h3/pull/1468))
+- **validate:** Convert malformed JSON to 400 in validated-handler path ([#1465](https://github.com/h3js/h3/pull/1465))
+- **base:** Collapse leading-slash run in all base-stripping sites ([#1471](https://github.com/h3js/h3/pull/1471))
+- **html:** Make raw() trust marker unforgeable and hoist escape map ([#1473](https://github.com/h3js/h3/pull/1473))
+- **json-rpc:** Use `-32600` for valid-JSON non-object bodies ([#1483](https://github.com/h3js/h3/pull/1483))
+- Only discard prepared headers for error responses ([#1486](https://github.com/h3js/h3/pull/1486))
+- **event-stream:** Correct stream teardown on close and client disconnect ([#1484](https://github.com/h3js/h3/pull/1484))
+- **deprecated:** Correct v1 signatures in the compat shim ([#1492](https://github.com/h3js/h3/pull/1492))
+- **response:** Do not render non-Error throws as successful responses ([#1485](https://github.com/h3js/h3/pull/1485))
+- **event:** Keep event.context and req.context as one reference ([#1499](https://github.com/h3js/h3/pull/1499))
+- **response:** Absorb errors thrown in onResponse hook ([4a32c1b](https://github.com/h3js/h3/commit/4a32c1b))
+- **response:** Route synchronous prepareResponse throws through the error pipeline ([#1503](https://github.com/h3js/h3/pull/1503))
+- **response:** Keep content-length header for Uint8Array responses ([#1504](https://github.com/h3js/h3/pull/1504))
+- **response:** Strip HEAD body when merging prepared headers into a mutable Response ([#1490](https://github.com/h3js/h3/pull/1490))
+- **response:** Allow status and headers staged during the first stream chunk ([#1512](https://github.com/h3js/h3/pull/1512))
+
+### 💅 Refactors
+
+- **request:** ⚠️  Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
+- **event-stream:** ⚠️  Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
+- **sse:** Promote EventStream to public API, deprecate createEventStream ([#1509](https://github.com/h3js/h3/pull/1509))
+
+### 📖 Documentation
+
+- Security caveats for cors, proxy, redirect, host and static utils ([#1470](https://github.com/h3js/h3/pull/1470))
+- Explain `event.url.pathname` decoding ([3f8b5bc](https://github.com/h3js/h3/commit/3f8b5bc))
+
+### 🌊 Types
+
+- Canonical `RouteRules` interface ([#1474](https://github.com/h3js/h3/pull/1474))
+- Remove unused `StaticAssetMeta.path` ([0b34e24](https://github.com/h3js/h3/commit/0b34e24))
+
+### 🏡 Chore
+
+- Apply automated updates ([3e74620](https://github.com/h3js/h3/commit/3e74620))
+- Fix stale comment ([879c869](https://github.com/h3js/h3/commit/879c869))
+- Update agents.md ([6444251](https://github.com/h3js/h3/commit/6444251))
+- Add missing `H3Core` types ([978b17c](https://github.com/h3js/h3/commit/978b17c))
+- Update deps ([199afe6](https://github.com/h3js/h3/commit/199afe6))
+- Use normal tsc for typecheck ([7d70c6f](https://github.com/h3js/h3/commit/7d70c6f))
+- Update srvx to 0.12 ([5eb0a01](https://github.com/h3js/h3/commit/5eb0a01))
+- Update undocs ([ba42947](https://github.com/h3js/h3/commit/ba42947))
+- Update docs ([50266f3](https://github.com/h3js/h3/commit/50266f3))
+- Apply automated updates ([321b1dc](https://github.com/h3js/h3/commit/321b1dc))
+- Update deps ([6e24eb3](https://github.com/h3js/h3/commit/6e24eb3))
+
+#### ⚠️ Breaking Changes
+
+- ⚠️  Escape interpolated values in `html` tagged template ([#1459](https://github.com/h3js/h3/pull/1459))
+- **request:** ⚠️  Make x-forwarded-proto trust opt-in ([#1461](https://github.com/h3js/h3/pull/1461))
+- **event-stream:** ⚠️  Drop `autoclose` option ([#1495](https://github.com/h3js/h3/pull/1495))
+
+### ❤️ Contributors
+
+- Pooya Parsa ([@pi0](https://github.com/pi0))
+- Pi0x <x@pi0.io>
+- N0liu ([@n0liu](https://github.com/n0liu))
+- G1mn <beebird@gmail.com>
+- Sandro Circi ([@sandros94](https://github.com/sandros94))
+- Max ([@onmax](https://github.com/onmax))
+
 ## v2.0.1-rc.25
 
 [compare changes](https://github.com/h3js/h3/compare/v2.0.1-rc.24...v2.0.1-rc.25)
